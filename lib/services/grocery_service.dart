@@ -6,6 +6,7 @@ class GroceryService {
 
   // Add Item
   Future<void> addItem(String item) async {
+   //New Comment
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
     await _db.collection('users').doc(user.uid).collection('grocery').add({
